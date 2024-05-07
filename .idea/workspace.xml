@@ -5,7 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0494564c-d480-44e9-9051-cfe29076aee5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/tools/2Dline.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/2Dline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/BDCL.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/README.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dataloader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/loss.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/metric.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/network.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Fashion_ACC.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Fashion_NMI.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Fashion_result.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Fashion_tau.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/Fashion_tau.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/MNIST_USPS_ACC.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/MNIST_USPS_NMI.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/MNIST_USPS_result.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/MNIST_tau.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/MNIST_tau.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/metrics/DDCL/DDCL_C0_metrics.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/metrics/DDCL/DDCL_C1_metrics.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/metrics/DDCL/DDCL_E0_metrics.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/metrics/DDCL/DDCL_E1_metrics.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/metrics/MFL_C0_metrics.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/metrics/MFL_C1_metrics.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/metrics/MFL_E0_metrics.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/metrics/MFL_E1_metrics.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/result.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-2V/Caltech-2V0.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-2V/Caltech-2V0_ours.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-2V/Caltech-2V1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-2V/Caltech-2V1_ours.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V0.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V0_ours.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V1_ours.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V2_ours.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V3_ours.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/results/tsne/Caltech-5V/Caltech-5V4_ours.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/2Dline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/3Dbar.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train_utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +105,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tools" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -164,7 +219,7 @@
       <workItem from="1713683486264" duration="146000" />
       <workItem from="1715069856511" duration="1285000" />
       <workItem from="1715071160011" duration="41000" />
-      <workItem from="1715071243223" duration="379000" />
+      <workItem from="1715071243223" duration="635000" />
     </task>
     <servers />
   </component>
