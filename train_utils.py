@@ -32,6 +32,7 @@ def contrastive_train(epoch, data_loader, view, optimizer, model, criterion, dev
                 loss_list.append(criterion.forward_instance(hs[v], hs[w]) * lambda1)
                 loss_list.append(criterion.forward_consistency(qs[v], qns[v], qs[w], qns[w]) * lambda1)
             loss_list.append(mes(xs[v], xrs[v]))
+            loss_list.append(criterion.forward_feature(zs[v]) * lambda2)
             loss_list.append(criterion.forward_cluster(qs[v]) * lambda2)
             loss_list.append(criterion.entropy(qs[v]))
         loss = sum(loss_list)

@@ -1,0 +1,229 @@
+Network(
+  (encoders): ModuleList(
+    (0): Encoder(
+      (encoder): Sequential(
+        (0): Linear(in_features=784, out_features=500, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=500, out_features=500, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=500, out_features=2000, bias=True)
+        (5): ReLU()
+        (6): Linear(in_features=2000, out_features=512, bias=True)
+      )
+    )
+    (1): Encoder(
+      (encoder): Sequential(
+        (0): Linear(in_features=784, out_features=500, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=500, out_features=500, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=500, out_features=2000, bias=True)
+        (5): ReLU()
+        (6): Linear(in_features=2000, out_features=512, bias=True)
+      )
+    )
+  )
+  (decoders): ModuleList(
+    (0): Decoder(
+      (decoder): Sequential(
+        (0): Linear(in_features=512, out_features=2000, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=2000, out_features=500, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=500, out_features=500, bias=True)
+        (5): ReLU()
+        (6): Linear(in_features=500, out_features=784, bias=True)
+      )
+    )
+    (1): Decoder(
+      (decoder): Sequential(
+        (0): Linear(in_features=512, out_features=2000, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=2000, out_features=500, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=500, out_features=500, bias=True)
+        (5): ReLU()
+        (6): Linear(in_features=500, out_features=784, bias=True)
+      )
+    )
+  )
+  (feature_contrastive_module): Sequential(
+    (0): Linear(in_features=512, out_features=128, bias=True)
+  )
+  (clustering_module): Sequential(
+    (0): Linear(in_features=512, out_features=10, bias=True)
+  )
+)
+Pre_training ...
+Loss:0.137044
+Loss:0.102737
+Loss:0.100981
+Loss:0.100249
+Loss:0.096642
+Loss:0.089462
+Loss:0.083490
+Loss:0.074106
+  8%|█████████████████████▋                                                                                                                                                                                                                                                         | 8/100 [00:01<00:14,  6.38it/s]
+Loss:0.066765
+Loss:0.063076
+Loss:0.059232
+Loss:0.055363
+Loss:0.052496
+Loss:0.050221
+Loss:0.047848
+Loss:0.045762
+Loss:0.044144
+Loss:0.042496
+Loss:0.041141
+Loss:0.039879
+Loss:0.038580
+Loss:0.037493
+
+ 23%|██████████████████████████████████████████████████████████████                                                                                                                                                                                                                | 23/100 [00:03<00:10,  7.62it/s]
+Loss:0.035319
+Loss:0.034343
+Loss:0.033454
+Loss:0.032469
+Loss:0.031680
+Loss:0.030837
+Loss:0.030002
+Loss:0.029364
+Loss:0.028814
+Loss:0.028113
+Loss:0.027586
+Loss:0.027050
+Loss:0.026564
+Loss:0.025959
+Loss:0.025436
+
+
+ 54%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                                                                            | 54/100 [00:07<00:06,  7.50it/s]
+Loss:0.024583
+Loss:0.024292
+Loss:0.023840
+Loss:0.023457
+Loss:0.023035
+Loss:0.022778
+Loss:0.022362
+Loss:0.022085
+Loss:0.021768
+Loss:0.021439
+Loss:0.021170
+Loss:0.020918
+Loss:0.020635
+Loss:0.020575
+Loss:0.020175
+Loss:0.019861
+Loss:0.019620
+Loss:0.019323
+Loss:0.019109
+Loss:0.018998
+Loss:0.018756
+Loss:0.018551
+Loss:0.018387
+Loss:0.018141
+Loss:0.018111
+Loss:0.017831
+Loss:0.017566
+Loss:0.017436
+
+
+ 84%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                           | 84/100 [00:11<00:02,  7.91it/s]
+Loss:0.017066
+Loss:0.016934
+Loss:0.016816
+Loss:0.016638
+Loss:0.016512
+Loss:0.016390
+Loss:0.016189
+Loss:0.016050
+Loss:0.015908
+Loss:0.015840
+Loss:0.015672
+Loss:0.015535
+Loss:0.015410
+Loss:0.015360
+Loss:0.015242
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:13<00:00,  7.34it/s]
+  0%|                                                                                                                                                                                                                                                                                       | 0/100 [00:00<?, ?it/s]
+Loss:0.015036
+Loss:0.014870
+Loss:0.014636
+Loss:0.014589
+Loss:0.014512
+Loss:0.014416
+Loss:0.014232
+Loss:0.014157
+Loss:0.014146
+Loss:0.014075
+Loss:0.013939
+Loss:0.013807
+Loss:0.013722
+Loss:0.013608
+Loss:0.013592
+Loss:0.013508
+Contrastive training ...
+Loss:12.778384
+Clustering results on low-level features of each view:
+ACC1 = 0.4990 NMI1 = 0.4583 ARI1 = 0.3338 PUR1 = 0.5480
+ACC2 = 0.3966 NMI2 = 0.3653 ARI2 = 0.2344 PUR2 = 0.4332
+
+  1%|██▋                                                                                                                                                                                                                                                                            | 1/100 [00:11<18:54, 11.46s/it]
+ACC1 = 0.4978 NMI1 = 0.4600 ARI1 = 0.3350 PUR1 = 0.5468
+ACC2 = 0.4136 NMI2 = 0.3821 ARI2 = 0.2445 PUR2 = 0.4308
+Clustering results on cluster assignments of each view:
+ACC1 = 0.4604 NMI1 = 0.4263 ARI1 = 0.2755 PUR1 = 0.4604
+ACC2 = 0.3904 NMI2 = 0.3616 ARI2 = 0.2051 PUR2 = 0.4096
+Clustering results on semantic labels: 5000
+ACC = 0.4062 NMI = 0.3781 ARI = 0.2276 PUR = 0.4146
+Loss:9.116758
+Clustering results on low-level features of each view:
+ACC1 = 0.5974 NMI1 = 0.5385 ARI1 = 0.4378 PUR1 = 0.6414
+ACC2 = 0.5426 NMI2 = 0.4900 ARI2 = 0.3675 PUR2 = 0.5694
+Clustering results on high-level features of each view:
+  1%|██▋                                                                                                                                                                                                                                                                            | 1/100 [00:11<18:54, 11.46s/it]Traceback (most recent call last):
+  File "<__array_function__ internals>", line 179, in where
+KeyboardInterrupt
+Exception ignored in: 'sklearn.cluster._k_means_common._relocate_empty_clusters_dense'
+Traceback (most recent call last):
+  File "<__array_function__ internals>", line 179, in where
+KeyboardInterrupt:
+Traceback (most recent call last):
+  File "<__array_function__ internals>", line 179, in where
+KeyboardInterrupt
+Exception ignored in: 'sklearn.cluster._k_means_common._relocate_empty_clusters_dense'
+Traceback (most recent call last):
+  File "<__array_function__ internals>", line 179, in where
+KeyboardInterrupt:
+  2%|█████▍                                                                                                                                                                                                                                                                         | 2/100 [00:21<17:08, 10.49s/it]
+ACC2 = 0.5606 NMI2 = 0.5037 ARI2 = 0.3704 PUR2 = 0.5846
+Clustering results on cluster assignments of each view:
+ACC1 = 0.4410 NMI1 = 0.4690 ARI1 = 0.3113 PUR1 = 0.4928
+ACC2 = 0.4612 NMI2 = 0.4594 ARI2 = 0.3141 PUR2 = 0.4840
+Clustering results on semantic labels: 5000
+ACC = 0.4746 NMI = 0.5202 ARI = 0.3581 PUR = 0.4994
+Loss:7.986677
+  2%|█████▍                                                                                                                                                                                                                                                                         | 2/100 [00:24<20:11, 12.37s/it]
+Traceback (most recent call last):
+  File "train.py", line 119, in <module>
+    results = valid(model, device, dataset, view, data_size, class_num, eval_h=True)
+  File "/home/dsh/Projects/Works/BDCL/metric.py", line 105, in valid
+    y_pred = kmeans.fit_predict(low_level_vectors[v]/np.linalg.norm(low_level_vectors[v], axis=1, keepdims=True))
+  File "/home/dsh/anaconda3/envs/scan/lib/python3.8/site-packages/sklearn/cluster/_kmeans.py", line 1033, in fit_predict
+    return self.fit(X, sample_weight=sample_weight).labels_
+  File "/home/dsh/anaconda3/envs/scan/lib/python3.8/site-packages/sklearn/cluster/_kmeans.py", line 1461, in fit
+    centers_init = self._init_centroids(
+  File "/home/dsh/anaconda3/envs/scan/lib/python3.8/site-packages/sklearn/cluster/_kmeans.py", line 989, in _init_centroids
+    centers, _ = _kmeans_plusplus(
+  File "/home/dsh/anaconda3/envs/scan/lib/python3.8/site-packages/sklearn/cluster/_kmeans.py", line 234, in _kmeans_plusplus
+    distance_to_candidates = _euclidean_distances(
+  File "/home/dsh/anaconda3/envs/scan/lib/python3.8/site-packages/sklearn/metrics/pairwise.py", line 366, in _euclidean_distances
+    distances = _euclidean_distances_upcast(X, XX, Y, YY)
+  File "/home/dsh/anaconda3/envs/scan/lib/python3.8/site-packages/sklearn/metrics/pairwise.py", line 564, in _euclidean_distances_upcast
+    YY_chunk = row_norms(Y_chunk, squared=True)[np.newaxis, :]
+  File "/home/dsh/anaconda3/envs/scan/lib/python3.8/site-packages/sklearn/utils/extmath.py", line 77, in row_norms
+    norms = np.einsum("ij,ij->i", X, X)
+  File "<__array_function__ internals>", line 200, in einsum
+  File "/home/dsh/anaconda3/envs/scan/lib/python3.8/site-packages/numpy/core/einsumfunc.py", line 1371, in einsum
+    return c_einsum(*operands, **kwargs)
+KeyboardInterrupt

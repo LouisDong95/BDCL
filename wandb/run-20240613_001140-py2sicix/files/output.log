@@ -1,0 +1,479 @@
+Network(
+  (encoders): ModuleList(
+    (0): Encoder(
+      (encoder): Sequential(
+        (0): Linear(in_features=784, out_features=500, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=500, out_features=500, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=500, out_features=2000, bias=True)
+        (5): ReLU()
+        (6): Linear(in_features=2000, out_features=512, bias=True)
+      )
+    )
+    (1): Encoder(
+      (encoder): Sequential(
+        (0): Linear(in_features=784, out_features=500, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=500, out_features=500, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=500, out_features=2000, bias=True)
+        (5): ReLU()
+        (6): Linear(in_features=2000, out_features=512, bias=True)
+      )
+    )
+  )
+  (decoders): ModuleList(
+    (0): Decoder(
+      (decoder): Sequential(
+        (0): Linear(in_features=512, out_features=2000, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=2000, out_features=500, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=500, out_features=500, bias=True)
+        (5): ReLU()
+        (6): Linear(in_features=500, out_features=784, bias=True)
+      )
+    )
+    (1): Decoder(
+      (decoder): Sequential(
+        (0): Linear(in_features=512, out_features=2000, bias=True)
+        (1): ReLU()
+        (2): Linear(in_features=2000, out_features=500, bias=True)
+        (3): ReLU()
+        (4): Linear(in_features=500, out_features=500, bias=True)
+        (5): ReLU()
+        (6): Linear(in_features=500, out_features=784, bias=True)
+      )
+    )
+  )
+  (feature_contrastive_module): Sequential(
+    (0): Linear(in_features=512, out_features=128, bias=True)
+  )
+  (clustering_module): Sequential(
+    (0): Linear(in_features=512, out_features=10, bias=True)
+  )
+)
+Pre_training ...
+Loss:0.137044
+Loss:0.102737
+Loss:0.100981
+Loss:0.100249
+Loss:0.096642
+Loss:0.089462
+Loss:0.083490
+Loss:0.074106
+  8%|█████████████████████▋                                                                                                                                                                                                                                                         | 8/100 [00:01<00:14,  6.39it/s]
+Loss:0.066765
+Loss:0.063076
+Loss:0.059232
+Loss:0.055363
+Loss:0.052496
+Loss:0.050221
+Loss:0.047848
+Loss:0.045762
+Loss:0.044144
+Loss:0.042496
+Loss:0.041141
+Loss:0.039879
+Loss:0.038580
+Loss:0.037493
+
+ 23%|██████████████████████████████████████████████████████████████                                                                                                                                                                                                                | 23/100 [00:03<00:10,  7.33it/s]
+Loss:0.035319
+Loss:0.034343
+Loss:0.033454
+Loss:0.032469
+Loss:0.031680
+Loss:0.030837
+Loss:0.030002
+Loss:0.029364
+Loss:0.028814
+Loss:0.028113
+Loss:0.027586
+Loss:0.027050
+Loss:0.026564
+Loss:0.025959
+
+ 38%|██████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                                                                                                       | 38/100 [00:05<00:08,  7.71it/s]
+Loss:0.025092
+Loss:0.024583
+Loss:0.024292
+Loss:0.023840
+Loss:0.023457
+Loss:0.023035
+Loss:0.022778
+Loss:0.022362
+Loss:0.022085
+Loss:0.021768
+Loss:0.021439
+Loss:0.021170
+Loss:0.020918
+Loss:0.020635
+
+ 54%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                                                                            | 54/100 [00:07<00:05,  7.84it/s]
+Loss:0.020175
+Loss:0.019861
+Loss:0.019620
+Loss:0.019323
+Loss:0.019109
+Loss:0.018998
+Loss:0.018756
+Loss:0.018551
+Loss:0.018387
+Loss:0.018141
+Loss:0.018111
+Loss:0.017831
+Loss:0.017566
+Loss:0.017436
+Loss:0.017287
+
+ 69%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                                   | 69/100 [00:09<00:03,  7.89it/s]
+Loss:0.016934
+Loss:0.016816
+Loss:0.016638
+Loss:0.016512
+Loss:0.016390
+Loss:0.016189
+Loss:0.016050
+Loss:0.015908
+Loss:0.015840
+Loss:0.015672
+Loss:0.015535
+Loss:0.015410
+Loss:0.015360
+Loss:0.015242
+Loss:0.015071
+
+ 85%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                        | 85/100 [00:11<00:01,  7.92it/s]
+Loss:0.014870
+Loss:0.014636
+Loss:0.014589
+Loss:0.014512
+Loss:0.014416
+Loss:0.014232
+Loss:0.014157
+Loss:0.014146
+Loss:0.014075
+Loss:0.013939
+Loss:0.013807
+Loss:0.013722
+Loss:0.013608
+Loss:0.013592
+Loss:0.013508
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:13<00:00,  7.41it/s]
+  0%|                                                                                                                                                                                                                                                                                       | 0/100 [00:00<?, ?it/s]
+Loss:22.022534
+Clustering results on semantic labels: 5000
+ACC = 0.3612 NMI = 0.3393 ARI = 0.1969 PUR = 0.3748
+Loss:12.577471
+Clustering results on semantic labels: 5000
+ACC = 0.5268 NMI = 0.5343 ARI = 0.4030 PUR = 0.5404
+Loss:10.671186
+Clustering results on semantic labels: 5000
+ACC = 0.5990 NMI = 0.6365 ARI = 0.4931 PUR = 0.5990
+Loss:9.258646
+Clustering results on semantic labels: 5000
+ACC = 0.6852 NMI = 0.7185 ARI = 0.5923 PUR = 0.6852
+Loss:8.054371
+Clustering results on semantic labels: 5000
+ACC = 0.7620 NMI = 0.7891 ARI = 0.7007 PUR = 0.7674
+Loss:7.291075
+Clustering results on semantic labels: 5000
+ACC = 0.8046 NMI = 0.8439 ARI = 0.7541 PUR = 0.8096
+Loss:6.829686
+Clustering results on semantic labels: 5000
+
+  7%|██████████████████▉                                                                                                                                                                                                                                                            | 7/100 [00:01<00:26,  3.57it/s]
+Loss:6.472200
+Clustering results on semantic labels: 5000
+ACC = 0.8830 NMI = 0.9057 ARI = 0.8475 PUR = 0.8834
+Loss:6.202918
+Clustering results on semantic labels: 5000
+ACC = 0.9014 NMI = 0.9081 ARI = 0.8597 PUR = 0.9014
+Loss:5.915565
+Clustering results on semantic labels: 5000
+ACC = 0.9068 NMI = 0.9164 ARI = 0.8679 PUR = 0.9068
+Loss:5.681713
+Clustering results on semantic labels: 5000
+ACC = 0.9440 NMI = 0.9325 ARI = 0.9007 PUR = 0.9440
+Loss:5.467435
+Clustering results on semantic labels: 5000
+ACC = 0.9746 NMI = 0.9542 ARI = 0.9475 PUR = 0.9746
+Loss:5.325345
+Clustering results on semantic labels: 5000
+ACC = 0.9864 NMI = 0.9682 ARI = 0.9705 PUR = 0.9864
+Loss:5.235717
+Clustering results on semantic labels: 5000
+
+ 14%|█████████████████████████████████████▊                                                                                                                                                                                                                                        | 14/100 [00:03<00:24,  3.46it/s]
+Loss:5.162232
+Clustering results on semantic labels: 5000
+ACC = 0.9906 NMI = 0.9779 ARI = 0.9795 PUR = 0.9906
+Loss:5.081578
+Clustering results on semantic labels: 5000
+ACC = 0.9930 NMI = 0.9810 ARI = 0.9846 PUR = 0.9930
+Loss:5.063129
+Clustering results on semantic labels: 5000
+ACC = 0.9936 NMI = 0.9821 ARI = 0.9859 PUR = 0.9936
+Loss:5.034434
+Clustering results on semantic labels: 5000
+ACC = 0.9936 NMI = 0.9820 ARI = 0.9859 PUR = 0.9936
+Loss:4.994506
+Clustering results on semantic labels: 5000
+ACC = 0.9950 NMI = 0.9855 ARI = 0.9889 PUR = 0.9950
+Loss:4.991054
+Clustering results on semantic labels: 5000
+ACC = 0.9944 NMI = 0.9841 ARI = 0.9876 PUR = 0.9944
+Loss:4.988307
+Clustering results on semantic labels: 5000
+ACC = 0.9944 NMI = 0.9838 ARI = 0.9876 PUR = 0.9944
+
+ 22%|███████████████████████████████████████████████████████████▍                                                                                                                                                                                                                  | 22/100 [00:06<00:21,  3.59it/s]
+Clustering results on semantic labels: 5000
+ACC = 0.9948 NMI = 0.9852 ARI = 0.9885 PUR = 0.9948
+Loss:4.911880
+Clustering results on semantic labels: 5000
+ACC = 0.9942 NMI = 0.9834 ARI = 0.9872 PUR = 0.9942
+Loss:4.928650
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9843 ARI = 0.9880 PUR = 0.9946
+Loss:4.905295
+Clustering results on semantic labels: 5000
+ACC = 0.9950 NMI = 0.9855 ARI = 0.9889 PUR = 0.9950
+Loss:4.888062
+Clustering results on semantic labels: 5000
+ACC = 0.9950 NMI = 0.9856 ARI = 0.9889 PUR = 0.9950
+Loss:4.902923
+Clustering results on semantic labels: 5000
+ACC = 0.9948 NMI = 0.9850 ARI = 0.9885 PUR = 0.9948
+Loss:4.850678
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.876092
+Clustering results on semantic labels: 5000
+
+ 29%|██████████████████████████████████████████████████████████████████████████████▎                                                                                                                                                                                               | 29/100 [00:08<00:19,  3.64it/s]
+Loss:4.855680
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.857608
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.841634
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.850961
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.855307
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.823888
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.842597
+Clustering results on semantic labels: 5000
+
+ 36%|█████████████████████████████████████████████████████████████████████████████████████████████████▏                                                                                                                                                                            | 36/100 [00:10<00:18,  3.54it/s]
+Loss:4.818874
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.835303
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.818013
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.814863
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.820773
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.799647
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.810685
+Clustering results on semantic labels: 5000
+
+ 43%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                                                          | 43/100 [00:12<00:15,  3.62it/s]
+Loss:4.800123
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.792724
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.795226
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.776700
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.795535
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.788600
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.790471
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+
+ 50%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                                                                                       | 50/100 [00:13<00:13,  3.61it/s]
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.776669
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.772401
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.800800
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.793588
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.785819
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.768981
+Clustering results on semantic labels: 5000
+
+ 57%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                                                                                    | 57/100 [00:15<00:11,  3.63it/s]
+Loss:4.779554
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.765776
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.781909
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.751839
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.777378
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.783278
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.766579
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.754624
+Clustering results on semantic labels: 5000
+
+ 65%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                                                              | 65/100 [00:18<00:09,  3.59it/s]
+Loss:4.759926
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.767119
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.736390
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.756508
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.767555
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.767291
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.762793
+Clustering results on semantic labels: 5000
+
+ 72%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                           | 72/100 [00:20<00:07,  3.51it/s]
+Loss:4.754706
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.757494
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.759129
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.767390
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.752216
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.771359
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.769794
+Clustering results on semantic labels: 5000
+
+ 79%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                        | 79/100 [00:22<00:05,  3.62it/s]
+Loss:4.748521
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.768322
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.750253
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.768094
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.753650
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.736643
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.742514
+Clustering results on semantic labels: 5000
+
+ 86%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                     | 86/100 [00:24<00:03,  3.63it/s]
+Loss:4.739661
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.755985
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.735888
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.746165
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.765522
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.759569
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.750203
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 100/100 [00:28<00:00,  3.57it/s]
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.739202
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.745729
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.744983
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.742249
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.744656
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946
+Loss:4.740297
+Clustering results on semantic labels: 5000
+ACC = 0.9946 NMI = 0.9844 ARI = 0.9880 PUR = 0.9946

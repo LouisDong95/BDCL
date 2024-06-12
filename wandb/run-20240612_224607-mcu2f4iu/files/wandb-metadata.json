@@ -1,0 +1,148 @@
+{
+    "os": "Linux-6.5.0-35-generic-x86_64-with-glibc2.17",
+    "python": "3.8.16",
+    "heartbeatAt": "2024-06-12T14:46:08.397481",
+    "startedAt": "2024-06-12T14:46:07.143543",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/LouisDong95/BDCL.git",
+        "commit": "480b5acfb44575ce6af3e26cb902dcdf8e0d8665"
+    },
+    "email": "127414931@qq.com",
+    "root": "/home/dsh/Projects/Works/BDCL",
+    "host": "dsh",
+    "username": "dsh",
+    "executable": "/home/dsh/anaconda3/envs/scan/bin/python",
+    "cpu_count": 12,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 2.0192499999999995,
+        "min": 800.0,
+        "max": 4700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3.99,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 3.564,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 3.715,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 4.821,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 1.862,
+            "min": 800.0,
+            "max": 5000.0
+        },
+        {
+            "current": 3.939,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.375,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.11,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 1.209,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3800.0
+        },
+        {
+            "current": 0.8,
+            "min": 800.0,
+            "max": 3800.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 915.3232879638672,
+            "used": 389.077579498291
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3080 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3080 Ti",
+            "memory_total": 12884901888
+        }
+    ],
+    "memory": {
+        "total": 31.146873474121094
+    }
+}

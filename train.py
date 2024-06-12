@@ -8,12 +8,12 @@ import argparse
 import random
 from loss import Loss
 from dataloader import load_data
-from train_utils import pretrain, contrastive_train, self_label
+from train_utils import pretrain, contrastive_train
 from utils import setup_seed, tsne_plot, metrics_plot
 
 # MNIST-USPS, BDGP, CCV, Fashion, Caltech-2V, Caltech-3V, Caltech-4V, Caltech-5V
 parser = argparse.ArgumentParser(description='train')
-parser.add_argument('--dataset', default='Caltech_2V')
+parser.add_argument('--dataset', default='Fashion')
 parser.add_argument('--batch_size', default=256, type=int)
 parser.add_argument("--temperature_f", default=0.5)
 parser.add_argument("--temperature_l", default=1.0)
@@ -51,7 +51,7 @@ if args.dataset == "CCV":
 if args.dataset == "Fashion":
     args.con_epochs = 100
     seed = 3
-    lambda1 = 0.1
+    lambda1 = 1.0
     lambda2 = 0.1
 # lambda1 = 0.1 lambda2 = 0.1 {'acc': 0.67, 'nmi': 0.5441733894079993, 'pur': 0.67}
 if args.dataset == "Caltech_2V":
@@ -112,14 +112,13 @@ for t in range(T):
     while epoch <= args.mse_epochs + args.con_epochs:
         contrastive_train(epoch, data_loader, view, optimizer, model, criterion, device, lambda1, lambda2)
         epoch += 1
-    results = valid(model, device, dataset, view, data_size, class_num, eval_h=True)
+    results = valid(model, device, dataset, view, data_size, class_num, eval_h=False)
 
     # # t-SNE
-    embeddings, Qs, labels = get_embedding(dataset, model, device, view, data_size)
+    # embeddings, Qs, labels = get_embedding(dataset, model, device, view, data_size)
     # tsne_plot(embeddings, labels, './results/tsne/')
     # metrics_plot(embeddings, './results/metrics')
     # metrics_plot(Qs, './results/metrics')
-
 
     with open('./results/log.txt', 'a+') as fw:
         fw.write(args.dataset + ' ' + str(lambda1) + ' ' + str(lambda2) + ' ' + str(results) + '\n')
