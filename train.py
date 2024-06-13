@@ -1,16 +1,14 @@
 import os
-import csv
 import torch
 from tqdm import tqdm
 from network import Network
-from metric import valid, get_embedding
+from utils.metric import valid
 from torch.utils.data import Dataset
 import argparse
-import random
 from loss import Loss
 from dataloader import load_data
-from train_utils import pretrain, contrastive_train
-from utils import setup_seed, tsne_plot, metrics_plot
+from utils.train_utils import pretrain, contrastive_train
+from utils.utils import setup_seed
 
 # MNIST-USPS, BDGP, CCV, Fashion, Caltech-2V, Caltech-3V, Caltech-4V, Caltech-5V
 parser = argparse.ArgumentParser(description='train')

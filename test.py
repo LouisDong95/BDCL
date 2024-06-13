@@ -1,6 +1,6 @@
 import torch
 from network import Network
-from metric import valid
+from utils.metric import valid
 import argparse
 from dataloader import load_data
 
