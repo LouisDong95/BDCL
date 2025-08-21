@@ -3,6 +3,48 @@ import torch.nn.functional as F
 import torch
 
 
+class ConvEncoder(nn.Module):
+    def __init__(self, input_dim, feature_dim):
+        super(ConvEncoder, self).__init__()
+
+        # Encoder
+        self.encoder = nn.Sequential(
+            nn.Conv2d(in_channels=1, out_channels=32, kernel_size=3, stride=2, padding=1),  # (B, 1, 28, 28) -> (B, 32, 14, 14)
+            nn.ReLU(),
+            nn.Conv2d(32, 64, 3, stride=2, padding=1),  # (B, 32, 14, 14) -> (B, 64, 7, 7)
+            nn.ReLU(),
+            nn.Conv2d(64, 128, 3, stride=2, padding=1),  # (B, 64, 7, 7) -> (B, 128, 4, 4)
+            nn.ReLU(),
+            nn.Flatten(),  # (B, 128, 4, 4) -> (B, 128*4*4)
+            nn.Linear(128 * 4 * 4, feature_dim)  # (B, 128*4*4) -> (B, 512)
+        )
+
+    def forward(self, x):
+        encoded = self.encoder(x)
+        return encoded
+
+
+class ConvDecoder(nn.Module):
+    def __init__(self, feature_dim):
+        super(ConvDecoder, self).__init__()
+        # Decoder
+        self.decoder = nn.Sequential(
+            nn.Linear(feature_dim, 128 * 4 * 4),  # (B, 512) -> (B, 128*4*4)
+            nn.ReLU(),
+            nn.Unflatten(1, (128, 4, 4)),  # (B, 128*4*4) -> (B, 128, 4, 4)
+            nn.ConvTranspose2d(128, 64, 3, stride=2, padding=1, output_padding=0),  # (B, 128, 4, 4) -> (B, 64, 7, 7)
+            nn.ReLU(),
+            nn.ConvTranspose2d(64, 32, 3, stride=2, padding=1, output_padding=1),  # (B, 64, 7, 7) -> (B, 32, 14, 14)
+            nn.ReLU(),
+            nn.ConvTranspose2d(32, 1, 3, stride=2, padding=1, output_padding=1),  # (B, 32, 14, 14) -> (B, 1, 28, 28)
+            nn.Sigmoid()  # Use sigmoid if input images are normalized to [0, 1]
+        )
+
+    def forward(self, x):
+        decoded = self.decoder(x)
+        return decoded
+
+
 class Encoder(nn.Module):
     def __init__(self, input_dim, feature_dim):
         super(Encoder, self).__init__()
@@ -38,13 +80,18 @@ class Decoder(nn.Module):
 
 
 class Network(nn.Module):
-    def __init__(self, view, input_size, feature_dim, high_feature_dim, class_num, device):
+    def __init__(self, view, input_size, feature_dim, high_feature_dim, class_num, device, default='AE'):
         super(Network, self).__init__()
         self.encoders = []
         self.decoders = []
-        for v in range(view):
-            self.encoders.append(Encoder(input_size[v], feature_dim).to(device))
-            self.decoders.append(Decoder(input_size[v], feature_dim).to(device))
+        if default == 'AE':
+            for v in range(view):
+                self.encoders.append(Encoder(input_size[v], feature_dim).to(device))
+                self.decoders.append(Decoder(input_size[v], feature_dim).to(device))
+        else:
+            for v in range(view):
+                self.encoders.append(ConvEncoder(input_size[v], feature_dim).to(device))
+                self.decoders.append(ConvDecoder(feature_dim).to(device))
         self.encoders = nn.ModuleList(self.encoders)
         self.decoders = nn.ModuleList(self.decoders)
 

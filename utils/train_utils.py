@@ -1,5 +1,6 @@
 import torch
 
+
 def pretrain(epoch, data_loader, view, optimizer, model, device):
     tot_loss = 0.
     criterion = torch.nn.MSELoss()
@@ -18,7 +19,7 @@ def pretrain(epoch, data_loader, view, optimizer, model, device):
     print('Epoch {}'.format(epoch), 'Loss:{:.6f}'.format(tot_loss / len(data_loader)))
 
 
-def contrastive_train(epoch, data_loader, view, optimizer, model, criterion, device, lambda1, lambda2):
+def contrastive_train(epoch, data_loader, view, optimizer, model, criterion, device, args):
     tot_loss = 0.
     mes = torch.nn.MSELoss()
     for batch_idx, (xs, _, _) in enumerate(data_loader):
@@ -29,10 +30,11 @@ def contrastive_train(epoch, data_loader, view, optimizer, model, criterion, dev
         loss_list = []
         for v in range(view):
             for w in range(v+1, view):
-                loss_list.append(criterion.forward_instance(hs[v], hs[w]) * lambda1)
-                loss_list.append(criterion.forward_consistency(qs[v], qns[v], qs[w], qns[w]) * lambda1)
+                loss_list.append(criterion.forward_instance(hs[v], hs[w]) * args.lambda1)
+                loss_list.append(criterion.forward_consistency(qs[v], qns[v], qs[w], qns[w]) * args.lambda1)
             loss_list.append(mes(xs[v], xrs[v]))
-            loss_list.append(criterion.forward_cluster(qs[v]) * lambda2)
+            loss_list.append(criterion.forward_feature(zs[v]) * args.lambda2)
+            loss_list.append(criterion.forward_cluster(qs[v]) * args.lambda2)
             loss_list.append(criterion.entropy(qs[v]))
         loss = sum(loss_list)
         loss.backward()

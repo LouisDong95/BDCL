@@ -101,7 +101,7 @@ class Loss(nn.Module):
         b, d = z_i.size()
         z_i = F.normalize(z_i, dim=0)
         sim = torch.matmul(z_i.t(), z_i)
-        loss = self.mse(sim, torch.eye(d).to(sim.get_device()))
+        loss = self.mse(sim, torch.eye(d).to('cuda'))
         return loss
 
     # Cluster Constraint
@@ -110,7 +110,7 @@ class Loss(nn.Module):
         b, k = q_prob.size()
         q_prob = F.normalize(q_prob, dim=0)
         sim = torch.matmul(q_prob.t(), q_prob)
-        loss = self.mse(sim, torch.eye(k).to(sim.get_device()))
+        loss = self.mse(sim, torch.eye(k).to('cuda'))
         return loss
 
     # Consistency Loss

@@ -44,38 +44,36 @@ class CCV(Dataset):
 
 
 class MNIST_USPS(Dataset):
-    def __init__(self, path):
-        self.Y = scipy.io.loadmat(path + 'MNIST_USPS.mat')['Y'].astype(np.int32).reshape(5000,)
-        self.V1 = scipy.io.loadmat(path + 'MNIST_USPS.mat')['X1'].astype(np.float32)
-        self.V2 = scipy.io.loadmat(path + 'MNIST_USPS.mat')['X2'].astype(np.float32)
+    def __init__(self, path, V, n):
+        self.view = V
+        self.n = n
+        self.dataset = scipy.io.loadmat(path + 'MNIST_USPS.mat')
+        self.Y = self.dataset['Y'].astype(np.int32).reshape(n,)
+        self.X1 = self.dataset['X1'].astype(np.float32).reshape(n, -1, 28, 28)
+        self.X2 = self.dataset['X2'].astype(np.float32).reshape(n, -1, 28, 28)
 
     def __len__(self):
-        return 5000
+        return self.n
 
     def __getitem__(self, idx):
-
-        x1 = self.V1[idx].reshape(784)
-        x2 = self.V2[idx].reshape(784)
-        return [torch.from_numpy(x1), torch.from_numpy(x2)], self.Y[idx], torch.from_numpy(np.array(idx)).long()
+        return [self.X1[idx], self.X2[idx]], self.Y[idx], idx
 
 
 class Fashion(Dataset):
-    def __init__(self, path):
-        self.Y = scipy.io.loadmat(path + 'Fashion.mat')['Y'].astype(np.int32).reshape(10000,)
-        self.V1 = scipy.io.loadmat(path + 'Fashion.mat')['X1'].astype(np.float32)
-        self.V2 = scipy.io.loadmat(path + 'Fashion.mat')['X2'].astype(np.float32)
-        self.V3 = scipy.io.loadmat(path + 'Fashion.mat')['X3'].astype(np.float32)
+    def __init__(self, path, V, n):
+        self.view = V
+        self.n = n
+        self.dataset = scipy.io.loadmat(path + 'Fashion.mat')
+        self.Y = self.dataset['Y'].astype(np.int32).reshape(n,)
+        self.X1 = self.dataset['X1'].astype(np.float32).reshape(n, -1, 28, 28)
+        self.X2 = self.dataset['X2'].astype(np.float32).reshape(n, -1, 28, 28)
+        self.X3 = self.dataset['X3'].astype(np.float32).reshape(n, -1, 28, 28)
 
     def __len__(self):
-        return 10000
+        return self.n
 
     def __getitem__(self, idx):
-
-        x1 = self.V1[idx].reshape(784)
-        x2 = self.V2[idx].reshape(784)
-        x3 = self.V3[idx].reshape(784)
-
-        return [torch.from_numpy(x1), torch.from_numpy(x2), torch.from_numpy(x3)], self.Y[idx], torch.from_numpy(np.array(idx)).long()
+        return [self.X1[idx], self.X2[idx], self.X3[idx]], self.Y[idx], idx
 
 
 class Caltech(Dataset):
@@ -117,23 +115,23 @@ def load_data(dataset):
         data_size = 2500
         class_num = 5
     elif dataset == "MNIST_USPS":
-        dataset = MNIST_USPS('../../Datasets/Multi_View/')
         dims = [784, 784]
         view = 2
         class_num = 10
         data_size = 5000
+        dataset = MNIST_USPS('../../Datasets/Multi_View/', view, data_size)
     elif dataset == "CCV":
-        dataset = CCV('../../Datasets/Multi_View/')
+        dataset = CCV('../../Datasets/Multi_View/CCV/')
         dims = [5000, 5000, 4000]
         view = 3
         data_size = 6773
         class_num = 20
     elif dataset == "Fashion":
-        dataset = Fashion('../../Datasets/Multi_View/')
         dims = [784, 784, 784]
         view = 3
         data_size = 10000
         class_num = 10
+        dataset = Fashion('../../Datasets/Multi_View/', view, data_size)
     elif dataset == "Caltech_2V":
         dataset = Caltech('../../Datasets/Multi_View/Caltech-5V.mat', view=2)
         dims = [40, 254]
